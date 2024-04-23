@@ -1,0 +1,87 @@
+@use "../../styles/theme.module.scss" as theme;
+
+.button {
+  display: block;
+  flex: auto;
+  height: 40px;
+  padding: 14px 16px;
+  z-index: 1;
+
+  border: 1px solid theme.$color-gray;
+  border-radius: 4px;
+  outline: none;
+
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 11px;
+  color: theme.$color-blue-dark;
+  background-color: theme.$color-white;
+
+  cursor: pointer;
+
+  transition:
+    background-color 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+
+  &:hover {
+    background-color: theme.$color-blue-light;
+    border-color: theme.$color-blue-light-border;
+    z-index: 2;
+  }
+
+  &.selected {
+    color: theme.$color-white;
+    background-color: theme.$color-blue-dark;
+    border-color: theme.$color-blue-dark;
+
+    &:hover {
+      color: theme.$color-white;
+      background-color: theme.$color-blue-dark;
+      border-color: theme.$color-blue-dark;
+      z-index: 2;
+    }
+  }
+
+  &.orange {
+    max-width: 160px;
+    border: 1px solid theme.$color-orange;
+    border-bottom-color: theme.$color-orange-border;
+    color: theme.$color-white;
+    background-color: theme.$color-orange;
+
+    &:hover {
+      border: 1px solid theme.$color-orange-hover;
+      border-bottom-color: theme.$color-orange-border-hover;
+      color: theme.$color-white;
+      background-color: theme.$color-orange-hover;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &.multiline {
+    height: initial;
+    width: 100%;
+    padding: 6px 30px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+[class*="button_group"] .button {
+  margin-left: -1px;
+  border-radius: 0;
+
+  &:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin: 0;
+  }
+
+  &:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}

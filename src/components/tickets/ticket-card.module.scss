@@ -1,0 +1,136 @@
+$color-gray: rgb(209, 212, 216);
+$color-text-light: rgb(143, 151, 154);
+$color-text-dark: rgb(74, 74, 74);
+$font-color: rgb(74, 74, 74);
+
+$font-color-light: rgb(140, 152, 152);
+
+.ticket_card {
+  display: flex;
+  flex-flow: row nowrap;
+  max-width: 100%;
+  margin-bottom: 20px;
+  overflow: hidden;
+
+  border-radius: 6px;
+
+  background-color: #ffffff;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+
+  transition: box-shadow 250ms ease;
+
+  &:hover {
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.16);
+  }
+
+  .capitalized {
+    text-transform: capitalize;
+  }
+
+  .left {
+    width: 200px;
+    padding: 26px 20px;
+    border-right: 1px solid $color-gray;
+
+    .carrier {
+      width: 120px;
+      height: 32px;
+      margin: 0 auto 22px;
+
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+
+      &.BA {
+        background-image: url("../../media//logos/BA.png");
+      }
+
+      &.TK {
+        background-image: url("../../media//logos/TK.png");
+      }
+
+      &.SU {
+        background-image: url("../../media//logos/SU.png");
+      }
+
+      &.S7 {
+        background-image: url("../../media//logos/S7.png");
+      }
+    }
+  }
+
+  .right {
+    width: calc(100% - 200px);
+    padding: 26px 26px;
+
+    .time_row {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+
+      color: $font-color;
+
+      .time {
+        font-size: 32px;
+        line-height: 30px;
+      }
+
+      .stops_placeholder {
+        display: flex;
+        flex-flow: column nowrap;
+        color: $color-text-light;
+        font-size: 10px;
+
+        >span:last-child {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          width: 150%;
+          margin-left: -23%;
+
+          span {
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: $color-gray;
+          }
+
+          svg {}
+        }
+      }
+    }
+
+    .date_row {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+
+      .date_label,
+      .date_data {
+        display: block;
+      }
+
+      .date_label {
+        margin-bottom: 3px;
+        font-size: 12px;
+        font-weight: 600;
+        color: $font-color;
+      }
+
+      .date_data {
+        font-size: 12px;
+        color: $color-text-light;
+      }
+
+      .date_left {
+        text-align: left;
+      }
+
+      .date_right {
+        text-align: right;
+      }
+    }
+  }
+}

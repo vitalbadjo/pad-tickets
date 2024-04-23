@@ -5,7 +5,7 @@ export const apiService = (props: {} = {}) => {
   return {
     getTickets: async (params: {} = {}): Promise<TicketsResponse> => {
       // get data with "params"
-      await delay(1000)
+      await delay(2000)
       return new Promise((res) => res(ticketsRawToTicketsResponse(TICKETS)))
     }
   }

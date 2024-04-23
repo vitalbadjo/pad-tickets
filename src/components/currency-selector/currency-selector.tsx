@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { ButtonGroup } from "./button-group";
-import { Button } from "./button";
-import { CurrenciesEnum } from "../services/utils";
+import React, { memo } from "react";
+import { ButtonGroup } from "../button/button-group";
+import { Button } from "../button/button";
+import { CurrenciesEnum } from "../../services/utils";
 import styles from "./currency-selector.module.scss"
 
 type ICurrencySelectorProps = {
@@ -9,8 +9,7 @@ type ICurrencySelectorProps = {
   selectedItem: CurrenciesEnum
 }
 
-export const CurrencySelector: React.FC<ICurrencySelectorProps> = ({ onChangeHandler, selectedItem }) => {
-  const [] = useState()
+export const CurrencySelector: React.FC<ICurrencySelectorProps> = memo(({ onChangeHandler, selectedItem }) => {
   return <div className={styles.currency_selector}>
     <h5 className={styles.title}>Валюта</h5>
     <ButtonGroup>
@@ -23,4 +22,4 @@ export const CurrencySelector: React.FC<ICurrencySelectorProps> = ({ onChangeHan
       }
     </ButtonGroup>
   </div>
-}
+})

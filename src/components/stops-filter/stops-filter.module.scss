@@ -1,0 +1,91 @@
+@use "../../styles/theme.module.scss" as theme;
+
+.stops_filter {
+  .title {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: theme.$font-color-default;
+    padding: 0px 16px;
+    margin-bottom: 16px;
+  }
+
+  .options {
+
+
+    .option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+
+      font-size: 14px;
+      color: theme.$font-color-default;
+
+      transition: background-color 250ms ease;
+
+      &:hover {
+        background-color: theme.$color-blue-light;
+
+        .button {
+          color: theme.$color-blue-dark;
+        }
+      }
+
+      .text_placeholder {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        input[type=checkbox] {
+          display: none;
+        }
+
+        input[type=checkbox]+.checkbox {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 17px;
+          height: 17px;
+          border: 1px solid theme.$color-gray;
+          border-radius: 2px;
+          transition: border-color 250ms ease, background-color 250ms ease;
+
+          svg {
+            display: none;
+          }
+
+        }
+
+        input[type=checkbox]:checked+.checkbox {
+          background-color: theme.$color-blue-light;
+          border: 3px solid white;
+          border: 1px solid theme.$color-blue-dark ;
+
+          svg {
+            display: block;
+          }
+        }
+
+        .text {
+          display: inline-block;
+          padding: 0 8px;
+        }
+      }
+
+      .button {
+
+        font-size: 12px;
+        color: #FFFFFF;
+        text-transform: uppercase;
+
+        cursor: pointer;
+
+        transition: font-weight 250ms ease, color 250ms ease;
+
+        &:hover {
+          // font-weight: 700;
+        }
+      }
+    }
+  }
+}

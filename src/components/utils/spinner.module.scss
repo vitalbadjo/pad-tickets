@@ -1,0 +1,46 @@
+$color-blue-dark: rgb(33, 150, 243);
+$spinner-size: 20px;
+$spinner-color: $color-blue-dark;
+$spinner-border-size: 2px;
+
+.spinner_placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner,
+.spinner:after {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.spinner {
+  width: $spinner-size;
+  height: $spinner-size;
+  display: block;
+  color: $spinner-color;
+
+  &:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    border: $spinner-border-size solid currentColor;
+    border-bottom-color: transparent;
+    border-radius: 100%;
+    background: transparent;
+
+    animation: ball-clip-rotate .75s linear infinite;
+  }
+}
+
+@keyframes ball-clip-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
