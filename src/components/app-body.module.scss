@@ -1,0 +1,9 @@
+.app_body {
+  display: flex;
+  align-items: start;
+
+  [class*='tickets_container'] {
+    width: calc(100% - 250px);
+  }
+
+}
